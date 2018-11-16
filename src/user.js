@@ -12,7 +12,8 @@ const UserSchema = new Schema({
     required: [true, 'Name is required.']
   },
   // postCount: Number, //commented out as this becomes a virtual type rather than a model attributes
-  posts: [PostSchema]
+  posts: [PostSchema],
+  likes: Number
 })
 
 UserSchema.virtual('postCount').get(function(){
@@ -24,7 +25,7 @@ UserSchema.virtual('postCount').get(function(){
 //
 // DO NOT USE ARROW FUNCTION
 // With arrow function the execution context will bind 'this' to the environnement
-// of the whole file while non arrow function allows to reassign the value of 'this' to
+// of the whole file while plain function allows to reassign the value of 'this' to
 // represent THE INSTANCE OF A MODEL ON WHICH WE ARE WORKING ON!!
 
 const User = mongoose.model('user', UserSchema);
