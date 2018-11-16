@@ -11,9 +11,6 @@ describe('Creating records', () => {
         assert(!joe.isNew);
         done();
       })
-
-
-    // assert.equal(1 + 1, 3)
   });
 
 });
